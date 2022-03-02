@@ -5,56 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="invoice.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Invoice Creator</title>
   </head>
   <body>
-    <header>
-    <h1>Invoice Creator</h1>
-    <h2>Thanks for choosing GoodCorp, LLC!</h2>
-    </header>
-    <main>
-      <div class="buttons">
-      <button>Wash Car: $10</button>
-      <button>Mow Lawn: $20</button>
-      <button>Pull Weeds: $30</button>
-</div>
-<div class="invoice">
-  <table>
-    <tr>
-      <td>TASK</td>
-      <td>TOTAL</td>
-    </tr>
+    <div class="container">
+      <header>
+        <h1>Invoice Creator</h1>
+        <h2>Thanks for choosing GoodCorp, LLC!</h2>
+      </header>
+      <main>
+        <div class="buttons">
+          <button class="btn-task">Wash Car: $10</button>
+          <button class="btn-task">Mow Lawn: $20</button>
+          <button class="btn-task">Pull Weeds: $30</button>
+        </div>
+        <div class="invoice">
+          <table>
+            <thead>
+              <tr>
+                <th>TASK</th>
+                <th>TOTAL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Wash Car <button class="btn-remove">Remove</button></td>
+                <td><span class="dollar-sign">$</span>10</td>
+              </tr>
+              <tr>
+                <td>Mow Lawn <button class="btn-remove">Remove</button></td>
+                <td><span class="dollar-sign">$</span>20</td>
+              </tr>
 
-    <tr>
-      <td>Wash Car <button>Remove</button></td>
-    <td>$10</td></tr>
-    </tr>
-      <tr>
-      <td>Mow Lawn <button>Remove</button></td>
-    <td>$20</td></tr>
-    </tr>
-      <tr>
-      <td>Pull Weeds <button>Remove</button></td>
-    <td>$30</td></tr>
-    </tr>
-  </table>
+              <tr>
+                <td>Pull Weeds <button class="btn-remove">Remove</button></td>
+                <td><span class="dollar-sign">$</span>30</td>
+              </tr>
+            </tbody>
+          </table>
 
-  <hr>
-  <table>
-    <tr>
-      <td>NOTES</td>
-<td>TOTAL AMOUNT</td>
-    </tr>
-    <tr>
-      <td>We accept cash, credit card, or Paypal</td>
-    <td>$60</td>
-    </tr>
-  </table>
-</div>
-
-<button>Send invoice</button>
-    </main>
-
+          <hr />
+          <table>
+            <thead>
+              <tr>
+                <th>NOTES</th>
+                <th>TOTAL AMOUNT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="note">We accept cash, credit card, or Paypal</td>
+                <td class="total-amount">$60</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="send-invoice-container">
+          <button class="btn-send-invoice">Send invoice</button>
+        </div>
+      </main>
+    </div>
     <script src="invoice.js"></script>
   </body>
 </html>
