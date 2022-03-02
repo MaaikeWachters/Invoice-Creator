@@ -21,9 +21,9 @@
       </header>
       <main>
         <div class="buttons">
-          <button class="btn-task">Wash Car: $10</button>
-          <button class="btn-task">Mow Lawn: $20</button>
-          <button class="btn-task">Pull Weeds: $30</button>
+          <button class="btn-task" id="btn-wash-car">Wash Car: $10</button>
+          <button class="btn-task" id="btn-mow-lawn">Mow Lawn: $20</button>
+          <button class="btn-task" id="btn-pull-weeds">Pull Weeds: $30</button>
         </div>
         <div class="invoice">
           <table>
@@ -33,21 +33,7 @@
                 <th>TOTAL</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Wash Car <button class="btn-remove">Remove</button></td>
-                <td><span class="dollar-sign">$</span>10</td>
-              </tr>
-              <tr>
-                <td>Mow Lawn <button class="btn-remove">Remove</button></td>
-                <td><span class="dollar-sign">$</span>20</td>
-              </tr>
-
-              <tr>
-                <td>Pull Weeds <button class="btn-remove">Remove</button></td>
-                <td><span class="dollar-sign">$</span>30</td>
-              </tr>
-            </tbody>
+            <tbody id="services-requested-container"></tbody>
           </table>
 
           <hr />
@@ -59,15 +45,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="note">We accept cash, credit card, or Paypal</td>
-                <td class="total-amount">$60</td>
+              <tr id="total-amount-el">
+                <td class="note"></td>
+                <td class="total-amount"><span id="total-amount"></span></td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="send-invoice-container">
-          <button class="btn-send-invoice">Send invoice</button>
+          <button id="btn-send-invoice">Send invoice</button>
         </div>
       </main>
     </div>

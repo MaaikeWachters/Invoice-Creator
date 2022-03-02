@@ -1,7 +1,7 @@
 body {
   font-family: "Inter", sans-serif;
   width: 550px;
-  color: #4A4E74;
+  color: #4a4e74;
 }
 
 header {
@@ -23,7 +23,6 @@ h2 {
   line-height: 28px;
   margin-top: 8px;
   padding-bottom: 48px;
-
 }
 
 table {
@@ -61,7 +60,7 @@ td {
 .btn-task {
   border: 1px solid #d5d4d8;
   background-color: white;
-  color: #4A4E74;
+  color: #4a4e74;
   padding: 12px 24px;
   margin: 8px;
   border-radius: 8px;
@@ -74,7 +73,7 @@ td {
   color: #918e9b;
 }
 
-.btn-send-invoice {
+#btn-send-invoice {
   text-align: center;
   background-color: #3770ed;
   border: none;
@@ -91,18 +90,18 @@ td {
 }
 
 .dollar-sign {
-    color: #918E9B;
-    font-weight: 500;
+  color: #918e9b;
+  font-weight: 500;
 }
 
 .total-amount {
-    font-size: 36px;
-   font-weight: 600;
-    line-height: 36px;;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 36px;
 }
 
 .note {
-    font-size: 12px;
-    font-weight: normal;
-    line-height: 15px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 15px;
 }
