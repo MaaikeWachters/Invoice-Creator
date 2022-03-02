@@ -68,11 +68,23 @@ function renderServicesRequested() {
 }
 
 sendInvoiceBtn.addEventListener("click", function () {
-  alert("Invoice sent! This is what you requested: ");
+  alert("Invoice sent!");
+  resetInvoice();
 });
+
+function resetInvoice() {
+  servicesRequested = [];
+  totalAmount = 0;
+  isWashCarAlive = true;
+  isMowLawnAlive = true;
+  isPullWeedsAlive = true;
+  servicesRequestedContainerEl.innerHTML = "";
+  totalAmountEl.innerHTML = `  <td class="note"></td>
+                <td class="total-amount"><span id="total-amount">$0</span></td>`;
+}
+
 // TO DO:
 
-// reset after invoice sent
 // render confirmation + order summary in alert
 // change alert to new page with confirmation?
 // remove button
