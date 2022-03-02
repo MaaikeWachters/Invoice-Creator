@@ -18,11 +18,10 @@ let isPullWeedsAlive = true;
 
 washCarBtn.addEventListener("click", function () {
   if (isWashCarAlive) {
-    servicesRequested.push({ description: "Wash Car", price: "10" });
-    totalAmount += 10;
+    servicesRequested.unshift({ description: "Wash Car", price: 10 });
+    totalAmount += servicesRequested[0].price;
     isWashCarAlive = false;
     renderServicesRequested();
-    renderTotalAmount();
   } else {
     alert("you already have this on your list");
   }
@@ -30,11 +29,10 @@ washCarBtn.addEventListener("click", function () {
 
 mowLawnBtn.addEventListener("click", function () {
   if (isMowLawnAlive) {
-    servicesRequested.push({ description: "Mow Lawn", price: "20" });
-    totalAmount += 20;
+    servicesRequested.unshift({ description: "Mow Lawn", price: 20 });
+    totalAmount += servicesRequested[0].price;
     isMowLawnAlive = false;
     renderServicesRequested();
-    renderTotalAmount();
   } else {
     alert("you already have this on your list");
   }
@@ -42,14 +40,18 @@ mowLawnBtn.addEventListener("click", function () {
 
 pullWeedsBtn.addEventListener("click", function () {
   if (isPullWeedsAlive) {
-    servicesRequested.push({ description: "Pull Weeds", price: "30" });
-    totalAmount += 30;
+    servicesRequested.unshift({ description: "Pull Weeds", price: 30 });
+    totalAmount += servicesRequested[0].price;
     isPullWeedsAlive = false;
     renderServicesRequested();
-    renderTotalAmount();
   } else {
     alert("you already have this on your list");
   }
+});
+
+sendInvoiceBtn.addEventListener("click", function () {
+  alert("Invoice sent!");
+  resetInvoice();
 });
 
 function renderTotalAmount() {
@@ -60,17 +62,25 @@ function renderTotalAmount() {
 function renderServicesRequested() {
   let listOfServices = "";
   for (let i = 0; i < servicesRequested.length; i++) {
-    listOfServices += `<tr><td>${servicesRequested[i].description}<button class="btn-remove">Remove</button></td>
+    listOfServices += `<tr><td>${servicesRequested[i].description}<button id="btn-remove">Remove</button></td>
                 <td><span class="dollar-sign">$</span>${servicesRequested[i].price}</td></tr>`;
   }
 
   servicesRequestedContainerEl.innerHTML = listOfServices;
+  renderTotalAmount();
+  activateRemoveBtn();
 }
 
-sendInvoiceBtn.addEventListener("click", function () {
-  alert("Invoice sent!");
-  resetInvoice();
-});
+function activateRemoveBtn() {
+  let removeBtn = document.getElementById("btn-remove");
+  removeBtn.addEventListener("click", function () {
+    totalAmount -= servicesRequested[0].price;
+    servicesRequested.shift();
+
+    renderServicesRequested();
+    renderTotalAmount();
+  });
+}
 
 function resetInvoice() {
   servicesRequested = [];
@@ -78,9 +88,10 @@ function resetInvoice() {
   isWashCarAlive = true;
   isMowLawnAlive = true;
   isPullWeedsAlive = true;
-  servicesRequestedContainerEl.innerHTML = "";
-  totalAmountEl.innerHTML = `  <td class="note"></td>
-                <td class="total-amount"><span id="total-amount">$0</span></td>`;
+  servicesRequestedContainerEl.innerHTML =
+    "<tr><td><em>Click a button to add services</em></td></tr>";
+  totalAmountEl.innerHTML = `<td class="note"></td>
+                <td class="total-amount"><span id="total-amount">$${totalAmount}</span></td>`;
 }
 
 // TO DO:
@@ -88,4 +99,3 @@ function resetInvoice() {
 // render confirmation + order summary in alert
 // change alert to new page with confirmation?
 // remove button
-// envelope icon for invoice button

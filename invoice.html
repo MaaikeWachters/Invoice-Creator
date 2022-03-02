@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/41a28d55e8.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Invoice Creator</title>
   </head>
   <body>
@@ -21,9 +25,9 @@
       </header>
       <main>
         <div class="buttons">
-          <button class="btn-task" id="btn-wash-car">Wash Car: $10</button>
-          <button class="btn-task" id="btn-mow-lawn">Mow Lawn: $20</button>
-          <button class="btn-task" id="btn-pull-weeds">Pull Weeds: $30</button>
+          <button id="btn-wash-car">Wash Car: $10</button>
+          <button id="btn-mow-lawn">Mow Lawn: $20</button>
+          <button id="btn-pull-weeds">Pull Weeds: $30</button>
         </div>
         <div class="invoice">
           <table>
@@ -33,7 +37,9 @@
                 <th>TOTAL</th>
               </tr>
             </thead>
-            <tbody id="services-requested-container"></tbody>
+            <tbody id="services-requested-container">
+              <tr><td><em>Click a button to add services</em></td></tr>
+            </tbody>
           </table>
 
           <hr />
@@ -53,7 +59,9 @@
           </table>
         </div>
         <div class="send-invoice-container">
-          <button id="btn-send-invoice">Send invoice</button>
+          <button id="btn-send-invoice">
+            <i class="fa-solid fa-envelope"></i> Send invoice
+          </button>
         </div>
       </main>
     </div>
